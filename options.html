@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Catcher - Security Center</title>
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --danger-red: #ff4444;
+            --warning-yellow: #ffdd00;
+            --safe-green: #00c851;
+            --background-grey: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #2c3e50;
+            background: #f4f6f9;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .tab-button {
+            padding: 12px 25px;
+            border-radius: 8px;
+            background: #f0f4f8;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #7f8c8d;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(26, 115, 232, 0.2);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Home Tab Styles */
+        .two-column {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .example-card {
+            background: #fff8f1;
+            border-left: 4px solid #ff9100;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+        .example-card2 {
+            background: #ecf4ff;
+            border-left: 4px solid #6881f4;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        /* Safety Tab Styles */
+        .protection-layer {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            background: #ecf4ff;
+            border-radius: 8px;
+        }
+
+        .layer-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Contact Tab Styles */
+        .contact-form {
+            display: grid;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            background: var(--primary-blue);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-nav">
+         <img src="./icons/icon.png" width="40" /> 
+        <button class="tab-button active" data-tab="home">🏠 Home</button>
+        <button class="tab-button" data-tab="safety">🛡️ How We Keep You Safe</button>
+        <button class="tab-button" data-tab="contact">📩 Contact Us</button>
+    </nav>
+
+    <!-- Home Tab -->
+    <div id="home" class="tab-content active">
+        <div class="two-column">
+            <!-- Left Column -->
+            <div>
+                <div class="example-card">
+                    <h2>🔍 What is Phishing?</h2>
+                    <p>Phishing is a cyberattack where scammers pretend to be trusted entities such as banks or reputable companies to steal sensitive information like passwords, credit card details, and personal data.</p>
+                    <strong>Attackers trick users into:</strong>
+                    <ul>
+                        <li>Clicking malicious links</li>
+                        <li>Entering credentials on fake websites</li>
+                        <li>Downloading infected attachments</li>
+                    </ul>
+                 <strong>⚠️ Phishing scams account for over 90% of cyberattacks worldwide!</strong>
+                 <h3>📢 How Phishing Works:</h3>
+                 <p>📨 Fake Email or Message → 🔗 Malicious Link → 🌐 Fake Website → 🔑 User Enters Details → 👤 Scammer Steals Data</p>
+                    
+                </div>
+
+                <div class="example-card">
+                    <h2>⚠️ Common Examples of Phishing Attacks</h2>
+                    <div class="example">
+                        <h3>📨 Email Phishings</h3>
+                        <p>Attackers send fake emails pretending to be from banks or reputable companies to trick you into clicking malicious links.</p>
+                        <p>📌 Example:</p>
+                        <p>📩 Subject: "Your Account Has Been Suspended!"</p>
+                        <p>💬 "We detected suspicious activity on your account. Click below to verify your details or your account will be deactivated."</p>
+                        <p>🔗 [Verify Now] → (Fake link leading to a phishing website)</p>
+                    </div>
+                    <div class="example">
+                        <h3>🌐 Fake Websites (Website Spoofing)</h3>
+                        <p>Attackers create fake websites that look like real ones to steal login credentials.</p>
+                        <p>📌 Example:</p>
+                        <p>💻 A fraudulent Paypal login page that looks real but has the URL:</p>
+                        <p>❌ www.paypa1.com instead of ✅ www.paypal.com</p>
+                        <p>🚨 Tip: Always check for HTTPS and the correct domain name before entering login details!</p>
+                    </div>
+                    <div class="example">
+                        <h3>📲 Smishing (SMS Phishing)</h3>
+                        <p>Scammers send fraudulent text messages with phishing links, impersonating banks or delivery services.</p>
+                        <p>📌 Example:</p>
+                        <p>📱 "Your package delivery has been delayed. Click here to reschedule: [FakeLink]"</p>
+                        <p>🚨 Tip: Never click on unexpected links in text messages. Always visit the official website directly!</p>
+                    </div>
+                    <div class="example">
+                        <h3>🏢 Business Email Compromise (BEC) / CEO Fraud</h3>
+                        <p>Attackers impersonate executives to trick employees into making fraudulent payments or sharing sensitive data..</p>
+                        <p>📌 Example:</p>
+                        <p>📨 "Hi, I’m in a meeting right now. Please process an urgent wire transfer of £5,000. I’ll explain later."</p>
+                        <p>🚨 Tip: Always verify financial requests through a second communication method (phone call, in-person verification).</p>
+                    </div>
+                    <div class="example">
+                        <h3>📱 Social Media Phishing</h3>
+                        <p>Attackers create fake profiles or messages on social media to steal personal data or spread malware.</p>
+                        <p>📌 Example:</p>
+                        <p>💬 "Congratulations! You’ve won a £500 gift card. Click here to claim your prize!" (Leads to a phishing page)</p>
+                        <p>🚨 Tip: If it seems too good to be true, it probably is!</p>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h2>🕵️ How to Spot Phishing Attempts</h2>
+                    <div class="example">
+                        <h3>⚠️ Suspicious Sender Email Addresses</h3>
+                        <p>🔎 Always check the email sender carefully. Attackers may use addresses like:</p>
+                        <p>❌ support@paypal-security.com instead of ✅ support@paypal.com</p>
+                    </div>
+                    <div class="example">
+                        <h3>⚠️ Urgent or Threatening Language</h3>
+                        <p>📢 Phrases like:</p>
+                        <p>❌ "Your account will be closed!"</p>
+                        <p>❌ "Immediate action required!"</p>
+                        <p>✅ Remember legitimate companies will never pressure you to act quickly!</p>
+                    </div>
+                    <div class="example">
+                        <h3>⚠️ Misspelled Links & Fake Domains</h3>
+                        <p>🔗 Hover over links before clicking! A fake link may look like:</p>
+                        <p>❌ www.amaz0n-support.com instead of ✅ www.amazon.com</p>
+                    </div>
+                    <div class="example">
+                        <h3>⚠️ Unexpected Attachments or Downloads</h3>
+                        <p>📂 Be wary of emails asking you to download:</p>
+                        <p>❌ .exe / .zip / .scr files – They may contain malware!</p>
+                    </div>
+                    <div class="example">
+                        <h3>⚠️ Generic Greetings & Poor Grammar</h3>
+                        <p>✉️ Attackers send mass emails with greetings like:</p>
+                        <p>❌ "Dear Customer," instead of ✅ "Dear [Your Name]"</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+                <h3>🔹 Learn How To Protect Yourself From Phishing</h3>
+                <strong>The short videos below provide detailed guidance on recognising, avoiding, and protecting yourself from phishing attacks:</strong>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/xyE43Gz4AW8?si=YEQH-36DaR8kKeUa" allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/R12_y2BhKbE" allowfullscreen></iframe>
+                </div>
+                <h3>Below are videos which analyse phishing email:</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/EBN_OrYUmzY?si=bjT_w75teVfd78Dp" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/o0btqyGWIQw?si=bzwmMtmsffR3kCAZ" allowfullscreen></iframe>
+                </div>
+                
+
+                <div class="resource-links">
+                    <h2>🔗 Additional Resources</h2>
+                    <strong>The following websites contain valuable information about phishing and online security:</strong>
+
+                    <p><a href="https://www.ncsc.gov.uk" target="_blank">National Cyber Security Centre (UK)</a></p>
+                    <ul>
+                        <li>Provides guidance on recognising and preventing phishing scams.</li>
+                        <li>Offers free cybersecurity training and resources.</li>
+                    </ul>
+                      <p><a href="https://www.cyberaware.gov.uk" target="_blank">Cyber Aware - UK Government</a></p>
+                      <ul>
+                        <li>A UK initiative with practical tips for online safety.</li>
+                        <li>Advice on strong passwords and secure browsing.</li>
+                      </ul>
+                      <p><a href="https://www.staysafeonline.org/" target="_blank">National Cybersecurity Alliance</a></p>
+                      <ul>
+                        <li>US-based cyber awareness campaign.</li>
+                        <li>Offers free phishing prevention guides.</li>
+                      </ul>
+                      <p><a href="https://www.europol.europa.eu/crime-areas/cybercrime" target="_blank">Europols Cybercrime Centre</a></p>
+                      <ul>
+                        <li>Offers European-wide guidance on phishing threats.</li>
+                        <li>Regularly publishes cybersecurity updates.</li>
+                      </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Safety Tab -->
+    <div id="safety" class="tab-content">
+        <h2>🔍 Phishing Catcher - How We Keep You Safe</h2>
+        <div class="example-card2">
+            <h2>Multi-Layered Protection 🛡️</h2>
+            <p>Phishing Catcher provides real-time protection using a three-layered security approach to detect and prevent phishing threats before they reach you.</p>
+            <strong>🔹 Layer 1: Google Safe Browsing API (Industry-Wide Threat Intelligence)</strong>
+            <p><strong>🔹 Layer 2: Time-Based Detection (Temporal Analysis) </strong></p>
+            <p><strong>🔹 Layer 3: Signature-Based Detection (Known Phishing Threats)</strong></p>
+            <strong>🔹 Layer 4: Heuristic Detection (Suspicious Pattern Analysis)</strong>
+            <p></p>
+        <p>🚀 No single security method is foolproof, but Phishing Catcher’s layered defense ensures that if one method doesn’t catch a threat, the next layer will.</p>
+        </div>
+        
+        
+        <div class="protection-layer">
+            <div class="layer-number">1</div>
+            <div>
+                <h3>Google Safe Browsing API</h3>
+                <p>Instantly verifies websites against Google's database of known phishing and malware threats:</p>
+                <ul>
+                    <li>Blocks access to malicious sites before they load.</li>
+                    <li>Updates every 30 minutes to detect the latest scams.</li>
+                    <li>Protects 4+ billion devices worldwide.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="protection-layer">
+            <div class="layer-number">2</div>
+            <div>
+                <h3>Time-Based Detection</h3>
+                <p>Monitors domain activity and webpage behavior over time to identify phishing attempts based on:</p>
+                <ul>
+                    <li>Domain Age & Expiry – Flags websites with recently registered domains or those expiring soon, as phishing sites often have short lifespans.</li>
+                    <li>Historical URL Analysis – Tracks changes in website structure and content over time to detect sudden modifications indicative of phishing tactics.</li>
+                    <li>SSL Certificate Validity – Detects self-signed, recently issued, or short-duration SSL certificates, which are common in fraudulent sites.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="protection-layer">
+            <div class="layer-number">3</div>
+            <div>
+                <h3>Signature Detection</h3>
+                <p> Identifies phishing attempts based on known attack patterns:</p>
+                <ul>
+                    <li>Compares sites to a database of 500,000+ verified phishing signatures.</li>
+                    <li>Uses automated pattern matching to detect fraudulent websites and emails.</li>
+                    <li>Receives continuous database updates to stay ahead of evolving threats.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="protection-layer">
+            <div class="layer-number">4</div>
+            <div>
+                <h3>Heuristic Analysis</h3>
+                <p> Uses advanced pattern detection to identify potential phishing attempts based on:</p>
+                <ul>
+                    <li>URL structures – Detects excessive hyphens, misspelled domains, and hidden redirects.</li>
+                    <li>Domain registration dates – Flags newly registered or short-lived phishing domains.</li>
+                    <li>Suspicious content patterns – Scans for fake login forms, urgent scam messages, and deceptive website elements.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="example-card2">
+            <h3>✨ Current Functionalities</h3>
+            <p>Phishing Catcher is designed to go beyond basic phishing detection, offering a range of intelligent security features that enhance your online protection and browsing experience. Our goal is to make phishing detection seamless, efficient, and user-friendly, ensuring that even non-technical users can stay safe online.</p>
+            <h4>🌐 Scan Current Page – Real-Time Phishing Detection</h4>
+            
+                <p>✔ Automatically scans every website you visit in real time.</p>
+                <p>✔ Uses our multi-layered detection system above to decide all of the URL's on current scanned page safety.</p>
+           
+            <h4>🔹 Email Scanner 📩</h4>
+                <p>✔ Automatically scans email content for embedded phishing links.</p>
+                <p>✔ Detects malicious URLs in Gmail, Outlook, and other email services.</p>
+
+            <h4>🔹 Color-Coded URL Indicators 🎨</h4>
+                <p>✔ Assigns clear visual safety levels to links based on threat analysis:</p>
+                <ul>
+                    <li>🟢 Green – Safe and verified website.</li>
+                    <li>🟡 Yellow – Potential risk, proceed with caution.</li>
+                    <li>🔴 Red – Confirmed phishing or malicious site, avoid at all costs.</li>
+                </ul>
+                <p>✔ Works in real-time to warn users before they interact with suspicious websites.</p>
+
+            <h4>🔹 Hover Feature on URLs 🖱️</h4>
+            <ul>
+                <li>✔ Provides instant security feedback just by hovering over a link.</li>
+                <li>✔ Displays a small pop-up warning if the URL is unsafe.</li>
+                <li>✔ Prevents users from accidentally clicking on dangerous links.</li>
+            </ul>
+
+            <h4>🔹 Mark as Safe Button ✅</h4>
+            <ul>
+                <li>✔ Enables users to whitelist frequently visited and trusted websites.</li>
+                <li>✔ Reduces false alerts for sites that are safe but flagged as suspicious.</li>
+                <li>✔ Helps improve browsing efficiency by preventing unnecessary scans.</li>
+            </ul>
+            <h4>🔹 Mark as Dangerous Button ❌</h4>
+            <ul>
+                <li>✔ Enables users to blacklist known phishing links which have avoided detection.</li>
+                <li>✔ Increases detection accuracy as these blacklisted links are now stored.</li>
+                <li>✔ Helps improce browser performance by preventing unncessary scans.</li>
+            </ul>
+            <h4>🔹 List of Scanned URLs 📜</h4>
+            <ul>
+                <li>✔ Keeps a log of all websites analysed by Phishing Catcher.</li>
+                <li>✔ Allows users to review previously flagged websites for better security awareness.</li>
+                <li>✔ Helps users track patterns of phishing attempts they may have encountered.</li>
+            </ul>
+        </div>
+        <div class="example-card2">
+            <h3>🌟 Why Choose Phishing Catcher?</h3>
+            <p>✔ 🛡️ Multi-Layered Security</p>
+            <p>✔ 🚀 Real-Time Protection</p>
+            <p>✔ 🔍 Intelligent Threat Detection</p>
+            <p>✔ 📢 Instant Warnings & Alerts</p>
+            <p>✔ 🔄 Continuous Updates</p>
+            <p>✔ 🎯 Designed for All Users</p>
+            <p>✔ 💡 100% Free to Use</p>
+            <strong>🔒 Your Safety is Our Priority!</strong>
+        </div>
+    </div>
+
+    <!-- Contact Tab -->
+    <div id="contact" class="tab-content">
+        <h2>📬 Get in Touch</h2>
+        
+        
+
+        <div style="text-align: center; margin-top: 30px;">
+            <h3>📞 Direct Contact</h3>
+            <p><strong>Email:</strong> <a href="mailto:isaazad7@gmail.com">isaazad7@gmail.com</a></p>
+            <p><strong>Phone:</strong>+44 7476 565985</p>
+            <p><strong>Address:</strong> London, United Kingdom</p>
+            <strong>You can use the contact details above to report any issues, bugs and false positives/negatives.</strong>
+            <p><strong>Help Us Make The Internet A Safer Place ☺</strong></p>
+        </div>
+    </div>
+
+    <script src="./options.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f7fc;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    width: 320px;
+    border-radius: 8px;
+  }
+  
+ 
+   
+   
+   
+  /* Popup Container */
+  .popup-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .popup-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Status Message */
+  .popup-status {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  /* Scan Button */
+  .scan-btn, .scan-btn1, .scan-btn2 {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .scan-btn:hover {
+    background: #0056b3;
+  }
+  
+  /* Result Container */
+  .result-container {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    min-height: 40px;
+    text-align: left;
+    overflow-y: auto;
+    font-size: 13px;
+    color: #444;
+    border: 1px solid #ddd;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 350px) {
+    .popup-container {
+        padding: 15px;
+    }
+    .scan-btn {
+        font-size: 13px;
+    }
+  }
+  .scan-btn1{
+    margin-top: 5px;
+    width: 89%;
+    text-decoration: none;
+    background-color: rgb(114, 114, 176);
+  }
+  .scan-btn2{
+    margin-top: 5px; 
+    text-decoration: none;
+    background-color: rgb(59, 186, 95);
+  }
