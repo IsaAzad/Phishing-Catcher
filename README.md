@@ -1,6 +1,8 @@
 How to Install and Run the Extension:
 
-1)Download
+1)Clone the repository:
+
+git clone https://github.com/IsaAzad/Phishing-Catcher.git
 
 2)Open Google Chrome and click the 3 dots in the top right corner.
 
