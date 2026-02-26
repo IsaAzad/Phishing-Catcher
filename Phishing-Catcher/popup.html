@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing-Catcher</title>
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        #blacklist {
+            background-color: #dc3545;
+        }
+        #blacklist:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup-container">
+        <h1 class="popup-title">🔍 Phishing-Catcher</h1>
+        <p class="popup-status" id="status">Ready to scan the current page.</p>
+        <button class="scan-btn" id="scan">
+            <i class="fas fa-search"></i> Scan Current Page
+        </button>
+       
+        <div class="result-container" id="linkResults"></div>
+        <button  class="scan-btn2" id="whitelist">
+            <i class="fas fa-search"></i> List Safe Links 🔗
+        </button>
+        <button class="scan-btn2" id="blacklist">
+            <i class="fas fa-search"></i> List Dangerous Links ⚠️
+        </button>
+        <a href="./options.html" target="_blank" class="scan-btn1" id="scan1">
+            <i class="fas fa-search"></i> Learn How To Stay Safe 🛡️
+        </a>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
