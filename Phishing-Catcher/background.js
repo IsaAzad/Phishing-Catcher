@@ -1,7 +1,7 @@
 console.log('✅ background.js successfully loaded');
 
-// Hardcoded API key (for demonstration purposes only)
-const API_KEY = 'AIzaSyDAjCmxdVptVQeu3xU1ADIZmebonDXKNkI';
+// Enter your GoogleSafeBrowsing API Key below, you can't use mine haha
+const API_KEY = '';
 
 // Initialize phishing signatures, whitelist, and blacklist
 chrome.storage.local.get(['phishingSignatures', 'whitelist', 'blacklist'], (data) => {
